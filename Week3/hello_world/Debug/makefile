@@ -60,8 +60,8 @@ all: main-build
 main-build: hello_world.elf secondary-outputs
 
 # Tool invocations
-hello_world.elf hello_world.map: $(OBJS) $(USER_OBJS) C:\Users\Terry\Desktop\Race_tutorial\Week3\hello_world\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "hello_world.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Terry\Desktop\Race_tutorial\Week3\hello_world\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello_world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+hello_world.elf hello_world.map: $(OBJS) $(USER_OBJS) C:\Users\Terry\Desktop\Race_tutorial\STM32F103RB_Tutorial\Week3\hello_world\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "hello_world.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Terry\Desktop\Race_tutorial\STM32F103RB_Tutorial\Week3\hello_world\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello_world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
